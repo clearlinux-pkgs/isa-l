@@ -4,7 +4,7 @@
 #
 Name     : isa-l
 Version  : 2.18.0
-Release  : 10
+Release  : 11
 URL      : https://github.com/01org/isa-l/archive/v2.18.0.tar.gz
 Source0  : https://github.com/01org/isa-l/archive/v2.18.0.tar.gz
 Summary  : Library for storage systems
@@ -45,7 +45,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1493391895
+export SOURCE_DATE_EPOCH=1493392142
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -64,7 +64,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1493391895
+export SOURCE_DATE_EPOCH=1493392142
 rm -rf %{buildroot}
 %make_install
 
