@@ -4,7 +4,7 @@
 #
 Name     : isa-l
 Version  : 2.18.0
-Release  : 12
+Release  : 13
 URL      : https://github.com/01org/isa-l/archive/v2.18.0.tar.gz
 Source0  : https://github.com/01org/isa-l/archive/v2.18.0.tar.gz
 Summary  : Library for storage systems
