@@ -1,3 +1,6 @@
+libisal.so.2:adler32_avx2_4
+libisal.so.2:adler32_base
+libisal.so.2:adler32_sse
 libisal.so.2:are_hufftables_useable
 libisal.so.2:build_heap
 libisal.so.2:build_huff_tree
@@ -16,6 +19,13 @@ libisal.so.2:crc16_t10dif_slver_0003011a
 libisal.so.2:crc32_gzip
 libisal.so.2:crc32_gzip_01
 libisal.so.2:crc32_gzip_base
+libisal.so.2:crc32_gzip_refl
+libisal.so.2:crc32_gzip_refl_base
+libisal.so.2:crc32_gzip_refl_by8
+libisal.so.2:crc32_gzip_refl_by8_slver
+libisal.so.2:crc32_gzip_refl_by8_slver_0100002c
+libisal.so.2:crc32_gzip_refl_slver
+libisal.so.2:crc32_gzip_refl_slver_0000002a
 libisal.so.2:crc32_ieee
 libisal.so.2:crc32_ieee_01
 libisal.so.2:crc32_ieee_01_slver
@@ -109,6 +119,7 @@ libisal.so.2:ec_encode_data_update_sse
 libisal.so.2:ec_init_tables
 libisal.so.2:encode_deflate_icf
 libisal.so.2:encode_deflate_icf_04
+libisal.so.2:encode_deflate_icf_06
 libisal.so.2:encode_deflate_icf_base
 libisal.so.2:expand_hufftables_icf
 libisal.so.2:flatten_ll
@@ -252,6 +263,8 @@ libisal.so.2:gf_vect_mul_slver_00050134
 libisal.so.2:gf_vect_mul_sse
 libisal.so.2:gf_vect_mul_sse_slver
 libisal.so.2:gf_vect_mul_sse_slver_00030034
+libisal.so.2:isal_adler32
+libisal.so.2:isal_adler32_bam1
 libisal.so.2:isal_create_hufftables
 libisal.so.2:isal_create_hufftables_subset
 libisal.so.2:isal_deflate
@@ -263,6 +276,10 @@ libisal.so.2:isal_deflate_body_base
 libisal.so.2:isal_deflate_finish
 libisal.so.2:isal_deflate_finish_01
 libisal.so.2:isal_deflate_finish_base
+libisal.so.2:isal_deflate_hash
+libisal.so.2:isal_deflate_hash_lvl0
+libisal.so.2:isal_deflate_hash_lvl0_01
+libisal.so.2:isal_deflate_hash_lvl0_base
 libisal.so.2:isal_deflate_icf_body
 libisal.so.2:isal_deflate_icf_body_01
 libisal.so.2:isal_deflate_icf_body_02
@@ -272,11 +289,15 @@ libisal.so.2:isal_deflate_icf_finish
 libisal.so.2:isal_deflate_icf_finish_01
 libisal.so.2:isal_deflate_icf_finish_base
 libisal.so.2:isal_deflate_init
+libisal.so.2:isal_deflate_reset
+libisal.so.2:isal_deflate_set_dict
 libisal.so.2:isal_deflate_set_hufftables
 libisal.so.2:isal_deflate_stateless
 libisal.so.2:isal_deflate_stateless_init
 libisal.so.2:isal_inflate
 libisal.so.2:isal_inflate_init
+libisal.so.2:isal_inflate_reset
+libisal.so.2:isal_inflate_set_dict
 libisal.so.2:isal_inflate_stateless
 libisal.so.2:isal_update_histogram
 libisal.so.2:isal_update_histogram_01
