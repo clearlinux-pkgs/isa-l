@@ -324,11 +324,7 @@ libisal.so.2:pq_gen_slver_00030128
 libisal.so.2:pq_gen_sse
 libisal.so.2:pq_gen_sse_slver
 libisal.so.2:pq_gen_sse_slver_00090032
-libisal.so.2:read_header
-libisal.so.2:read_header_stateful
 libisal.so.2:set_huff_codes
-libisal.so.2:write_header
-libisal.so.2:write_trailer
 libisal.so.2:xor_check
 libisal.so.2:xor_check_base
 libisal.so.2:xor_check_slver

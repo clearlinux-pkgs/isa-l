@@ -1,5 +1,5 @@
 PKG_NAME := isa-l
-URL := https://github.com/01org/isa-l/archive/v2.19.0.tar.gz
+URL := https://github.com/01org/isa-l/archive/v2.20.0.tar.gz
 
 
 include ../common/Makefile.common
