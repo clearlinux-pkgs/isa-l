@@ -1,0 +1,11 @@
+--- isa-l-2.22.0/igzip/huffman.h~	2018-03-30 18:54:04.000000000 +0000
++++ isa-l-2.22.0/igzip/huffman.h	2018-06-01 08:01:21.689209573 +0000
+@@ -62,7 +62,7 @@
+ #ifdef __BMI__
+ 	cnt = __tzcnt_u64(val);
+ 	cnt = cnt / 8;
+-#elifdef __x86_64__
++#elif defined(__x86_64__)
+ 
+ 	cnt = __bsfq(val);
+ 	if(val == 0)
