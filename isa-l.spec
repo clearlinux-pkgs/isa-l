@@ -10,10 +10,10 @@ Source0  : https://github.com/01org/isa-l/archive/v2.24.0.tar.gz
 Summary  : Library for storage systems
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: isa-l-bin
-Requires: isa-l-lib
-Requires: isa-l-license
-Requires: isa-l-man
+Requires: isa-l-bin = %{version}-%{release}
+Requires: isa-l-lib = %{version}-%{release}
+Requires: isa-l-license = %{version}-%{release}
+Requires: isa-l-man = %{version}-%{release}
 BuildRequires : nasm
 BuildRequires : sed
 BuildRequires : yasm
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538183882
+export SOURCE_DATE_EPOCH=1541614749
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -121,10 +121,10 @@ cd ../buildavx512;
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1538183882
+export SOURCE_DATE_EPOCH=1541614749
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/isa-l
-cp LICENSE %{buildroot}/usr/share/doc/isa-l/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/isa-l
+cp LICENSE %{buildroot}/usr/share/package-licenses/isa-l/LICENSE
 pushd ../buildavx512/
 %make_install_avx512
 popd
@@ -154,12 +154,12 @@ popd
 /usr/include/isa-l/raid.h
 /usr/include/isa-l/test.h
 /usr/include/isa-l/types.h
+/usr/lib64/haswell/avx512_1/libisal.so
 /usr/lib64/haswell/libisal.so
 /usr/lib64/libisal.so
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/haswell/avx512_1/libisal.so
 /usr/lib64/haswell/avx512_1/libisal.so.2
 /usr/lib64/haswell/avx512_1/libisal.so.2.0.24
 /usr/lib64/haswell/libisal.so.2
@@ -169,8 +169,8 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/isa-l/LICENSE
+/usr/share/package-licenses/isa-l/LICENSE
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/igzip.1
