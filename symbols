@@ -47,6 +47,7 @@ libisal.so.2:crc32_iscsi_slver
 libisal.so.2:crc32_iscsi_slver_0003011c
 libisal.so.2:crc64_ecma_norm
 libisal.so.2:crc64_ecma_norm_base
+libisal.so.2:crc64_ecma_norm_by16_10
 libisal.so.2:crc64_ecma_norm_by8
 libisal.so.2:crc64_ecma_norm_by8_slver
 libisal.so.2:crc64_ecma_norm_by8_slver_0100001a
@@ -54,6 +55,7 @@ libisal.so.2:crc64_ecma_norm_slver
 libisal.so.2:crc64_ecma_norm_slver_00000018
 libisal.so.2:crc64_ecma_refl
 libisal.so.2:crc64_ecma_refl_base
+libisal.so.2:crc64_ecma_refl_by16_10
 libisal.so.2:crc64_ecma_refl_by8
 libisal.so.2:crc64_ecma_refl_by8_slver
 libisal.so.2:crc64_ecma_refl_by8_slver_0100001d
@@ -61,6 +63,7 @@ libisal.so.2:crc64_ecma_refl_slver
 libisal.so.2:crc64_ecma_refl_slver_0000001b
 libisal.so.2:crc64_iso_norm
 libisal.so.2:crc64_iso_norm_base
+libisal.so.2:crc64_iso_norm_by16_10
 libisal.so.2:crc64_iso_norm_by8
 libisal.so.2:crc64_iso_norm_by8_slver
 libisal.so.2:crc64_iso_norm_by8_slver_01000020
@@ -68,6 +71,7 @@ libisal.so.2:crc64_iso_norm_slver
 libisal.so.2:crc64_iso_norm_slver_0000001e
 libisal.so.2:crc64_iso_refl
 libisal.so.2:crc64_iso_refl_base
+libisal.so.2:crc64_iso_refl_by16_10
 libisal.so.2:crc64_iso_refl_by8
 libisal.so.2:crc64_iso_refl_by8_slver
 libisal.so.2:crc64_iso_refl_by8_slver_01000023
@@ -75,6 +79,7 @@ libisal.so.2:crc64_iso_refl_slver
 libisal.so.2:crc64_iso_refl_slver_00000021
 libisal.so.2:crc64_jones_norm
 libisal.so.2:crc64_jones_norm_base
+libisal.so.2:crc64_jones_norm_by16_10
 libisal.so.2:crc64_jones_norm_by8
 libisal.so.2:crc64_jones_norm_by8_slver
 libisal.so.2:crc64_jones_norm_by8_slver_01000026
@@ -82,6 +87,7 @@ libisal.so.2:crc64_jones_norm_slver
 libisal.so.2:crc64_jones_norm_slver_00000024
 libisal.so.2:crc64_jones_refl
 libisal.so.2:crc64_jones_refl_base
+libisal.so.2:crc64_jones_refl_by16_10
 libisal.so.2:crc64_jones_refl_by8
 libisal.so.2:crc64_jones_refl_by8_slver
 libisal.so.2:crc64_jones_refl_by8_slver_01000029
