@@ -4,7 +4,7 @@
 #
 Name     : isa-l
 Version  : 2.28.0
-Release  : 30
+Release  : 31
 URL      : https://github.com/01org/isa-l/archive/v2.28.0/isa-l-2.28.0.tar.gz
 Source0  : https://github.com/01org/isa-l/archive/v2.28.0/isa-l-2.28.0.tar.gz
 Summary  : A collection of optimized low-level functions targeting storage applications
