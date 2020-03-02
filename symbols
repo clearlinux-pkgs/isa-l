@@ -7,20 +7,25 @@ libisal.so.2:crc16_t10dif
 libisal.so.2:crc16_t10dif_01
 libisal.so.2:crc16_t10dif_01_slver
 libisal.so.2:crc16_t10dif_01_slver_01060010
+libisal.so.2:crc16_t10dif_02
 libisal.so.2:crc16_t10dif_base
+libisal.so.2:crc16_t10dif_by16_10
 libisal.so.2:crc16_t10dif_by4
 libisal.so.2:crc16_t10dif_by4_slver
 libisal.so.2:crc16_t10dif_by4_slver_05020016
 libisal.so.2:crc16_t10dif_copy
 libisal.so.2:crc16_t10dif_copy_base
 libisal.so.2:crc16_t10dif_copy_by4
+libisal.so.2:crc16_t10dif_copy_by4_02
 libisal.so.2:crc16_t10dif_copy_by4_slver
 libisal.so.2:crc16_t10dif_copy_by4_slver_05020000
 libisal.so.2:crc16_t10dif_slver
 libisal.so.2:crc16_t10dif_slver_0003011a
 libisal.so.2:crc32_gzip_refl
 libisal.so.2:crc32_gzip_refl_base
+libisal.so.2:crc32_gzip_refl_by16_10
 libisal.so.2:crc32_gzip_refl_by8
+libisal.so.2:crc32_gzip_refl_by8_02
 libisal.so.2:crc32_gzip_refl_by8_slver
 libisal.so.2:crc32_gzip_refl_by8_slver_0100002c
 libisal.so.2:crc32_gzip_refl_slver
@@ -29,7 +34,9 @@ libisal.so.2:crc32_ieee
 libisal.so.2:crc32_ieee_01
 libisal.so.2:crc32_ieee_01_slver
 libisal.so.2:crc32_ieee_01_slver_01060011
+libisal.so.2:crc32_ieee_02
 libisal.so.2:crc32_ieee_base
+libisal.so.2:crc32_ieee_by16_10
 libisal.so.2:crc32_ieee_by4
 libisal.so.2:crc32_ieee_by4_slver
 libisal.so.2:crc32_ieee_by4_slver_05020017
@@ -188,6 +195,7 @@ libisal.so.2:gf_5vect_dot_prod_avx
 libisal.so.2:gf_5vect_dot_prod_avx2
 libisal.so.2:gf_5vect_dot_prod_avx2_slver
 libisal.so.2:gf_5vect_dot_prod_avx2_slver_04040199
+libisal.so.2:gf_5vect_dot_prod_avx512
 libisal.so.2:gf_5vect_dot_prod_avx_slver
 libisal.so.2:gf_5vect_dot_prod_avx_slver_02040194
 libisal.so.2:gf_5vect_dot_prod_sse
@@ -197,6 +205,7 @@ libisal.so.2:gf_5vect_mad_avx
 libisal.so.2:gf_5vect_mad_avx2
 libisal.so.2:gf_5vect_mad_avx2_slver
 libisal.so.2:gf_5vect_mad_avx2_slver_0401020e
+libisal.so.2:gf_5vect_mad_avx512
 libisal.so.2:gf_5vect_mad_avx_slver
 libisal.so.2:gf_5vect_mad_avx_slver_0201020d
 libisal.so.2:gf_5vect_mad_sse
@@ -206,6 +215,7 @@ libisal.so.2:gf_6vect_dot_prod_avx
 libisal.so.2:gf_6vect_dot_prod_avx2
 libisal.so.2:gf_6vect_dot_prod_avx2_slver
 libisal.so.2:gf_6vect_dot_prod_avx2_slver_0404019a
+libisal.so.2:gf_6vect_dot_prod_avx512
 libisal.so.2:gf_6vect_dot_prod_avx_slver
 libisal.so.2:gf_6vect_dot_prod_avx_slver_02040195
 libisal.so.2:gf_6vect_dot_prod_sse
@@ -215,6 +225,7 @@ libisal.so.2:gf_6vect_mad_avx
 libisal.so.2:gf_6vect_mad_avx2
 libisal.so.2:gf_6vect_mad_avx2_slver
 libisal.so.2:gf_6vect_mad_avx2_slver_04010211
+libisal.so.2:gf_6vect_mad_avx512
 libisal.so.2:gf_6vect_mad_avx_slver
 libisal.so.2:gf_6vect_mad_avx_slver_02010210
 libisal.so.2:gf_6vect_mad_sse
