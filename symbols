@@ -50,6 +50,7 @@ libisal.so.2:crc32_iscsi_01
 libisal.so.2:crc32_iscsi_01_slver
 libisal.so.2:crc32_iscsi_01_slver_01040015
 libisal.so.2:crc32_iscsi_base
+libisal.so.2:crc32_iscsi_by16_10
 libisal.so.2:crc32_iscsi_slver
 libisal.so.2:crc32_iscsi_slver_0003011c
 libisal.so.2:crc64_ecma_norm
@@ -313,7 +314,9 @@ libisal.so.2:isal_deflate_icf_finish_lvl1
 libisal.so.2:isal_deflate_icf_finish_lvl2
 libisal.so.2:isal_deflate_icf_finish_lvl3
 libisal.so.2:isal_deflate_init
+libisal.so.2:isal_deflate_process_dict
 libisal.so.2:isal_deflate_reset
+libisal.so.2:isal_deflate_reset_dict
 libisal.so.2:isal_deflate_set_dict
 libisal.so.2:isal_deflate_set_hufftables
 libisal.so.2:isal_deflate_stateless
