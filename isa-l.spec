@@ -4,13 +4,14 @@
 #
 Name     : isa-l
 Version  : 2.30.0
-Release  : 33
+Release  : 34
 URL      : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Source0  : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Summary  : Library for storage systems
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: isa-l-bin = %{version}-%{release}
+Requires: isa-l-filemap = %{version}-%{release}
 Requires: isa-l-lib = %{version}-%{release}
 Requires: isa-l-license = %{version}-%{release}
 Requires: isa-l-man = %{version}-%{release}
@@ -26,6 +27,7 @@ Intel(R) Intelligent Storage Acceleration Library
 Summary: bin components for the isa-l package.
 Group: Binaries
 Requires: isa-l-license = %{version}-%{release}
+Requires: isa-l-filemap = %{version}-%{release}
 
 %description bin
 bin components for the isa-l package.
@@ -43,10 +45,19 @@ Requires: isa-l = %{version}-%{release}
 dev components for the isa-l package.
 
 
+%package filemap
+Summary: filemap components for the isa-l package.
+Group: Default
+
+%description filemap
+filemap components for the isa-l package.
+
+
 %package lib
 Summary: lib components for the isa-l package.
 Group: Libraries
 Requires: isa-l-license = %{version}-%{release}
+Requires: isa-l-filemap = %{version}-%{release}
 
 %description lib
 lib components for the isa-l package.
@@ -83,34 +94,34 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1605194099
+export SOURCE_DATE_EPOCH=1633755250
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
 %reconfigure --disable-static
 make  %{?_smp_mflags}
 unset PKG_CONFIG_PATH
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=haswell"
-export CXXFLAGS="$CXXFLAGS -m64 -march=haswell"
-export FFLAGS="$FFLAGS -m64 -march=haswell"
-export FCFLAGS="$FCFLAGS -m64 -march=haswell"
-export LDFLAGS="$LDFLAGS -m64 -march=haswell"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 %reconfigure --disable-static
 make  %{?_smp_mflags}
 popd
 unset PKG_CONFIG_PATH
 pushd ../buildavx512/
-export CFLAGS="$CFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=512"
-export CXXFLAGS="$CXXFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=512"
-export FFLAGS="$FFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=512"
-export FCFLAGS="$FCFLAGS -m64 -march=skylake-avx512 -mprefer-vector-width=512"
-export LDFLAGS="$LDFLAGS -m64 -march=skylake-avx512"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v4"
 %reconfigure --disable-static
 make  %{?_smp_mflags}
 popd
@@ -127,15 +138,17 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1605194099
+export SOURCE_DATE_EPOCH=1633755250
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/isa-l
 cp %{_builddir}/isa-l-2.30.0/LICENSE %{buildroot}/usr/share/package-licenses/isa-l/c41999097043083c4213a15101a122f1401e41df
-pushd ../buildavx512/
-%make_install_avx512
-popd
 pushd ../buildavx2/
-%make_install_avx2
+%make_install_v3
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+popd
+pushd ../buildavx512/
+%make_install_v4
+/usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 popd
 %make_install
 
@@ -144,9 +157,8 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/haswell/avx512_1/igzip
-/usr/bin/haswell/igzip
 /usr/bin/igzip
+/usr/share/clear/optimized-elf/bin*
 
 %files dev
 %defattr(-,root,root,-)
@@ -160,19 +172,18 @@ popd
 /usr/include/isa-l/raid.h
 /usr/include/isa-l/test.h
 /usr/include/isa-l/types.h
-/usr/lib64/haswell/avx512_1/libisal.so
-/usr/lib64/haswell/libisal.so
 /usr/lib64/libisal.so
 /usr/lib64/pkgconfig/libisal.pc
 
+%files filemap
+%defattr(-,root,root,-)
+/usr/share/clear/filemap/filemap-isa-l
+
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/haswell/avx512_1/libisal.so.2
-/usr/lib64/haswell/avx512_1/libisal.so.2.0.30
-/usr/lib64/haswell/libisal.so.2
-/usr/lib64/haswell/libisal.so.2.0.30
 /usr/lib64/libisal.so.2
 /usr/lib64/libisal.so.2.0.30
+/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
