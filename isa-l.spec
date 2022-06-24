@@ -4,7 +4,7 @@
 #
 Name     : isa-l
 Version  : 2.30.0
-Release  : 37
+Release  : 38
 URL      : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Source0  : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Summary  : Library for storage systems
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1633755250
+export SOURCE_DATE_EPOCH=1656044482
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -107,9 +107,9 @@ export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -fl
 make  %{?_smp_mflags}
 unset PKG_CONFIG_PATH
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v3"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3"
-export FFLAGS="$FFLAGS -m64 -march=x86-64-v3"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 %reconfigure --disable-static
@@ -117,9 +117,9 @@ make  %{?_smp_mflags}
 popd
 unset PKG_CONFIG_PATH
 pushd ../buildavx512/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
-export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256 -Wl,-z,x86-64-v4"
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v4 -mprefer-vector-width=256"
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v4"
 %reconfigure --disable-static
@@ -138,19 +138,19 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1633755250
+export SOURCE_DATE_EPOCH=1656044482
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/isa-l
 cp %{_builddir}/isa-l-2.30.0/LICENSE %{buildroot}/usr/share/package-licenses/isa-l/c41999097043083c4213a15101a122f1401e41df
 pushd ../buildavx2/
 %make_install_v3
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 popd
 pushd ../buildavx512/
 %make_install_v4
-/usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 popd
 %make_install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx512 %{buildroot}-v4 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -181,9 +181,14 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so
+/usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so.2
+/usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so.2.0.30
+/usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so
+/usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so.2
+/usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so.2.0.30
 /usr/lib64/libisal.so.2
 /usr/lib64/libisal.so.2.0.30
-/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
