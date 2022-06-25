@@ -4,7 +4,7 @@
 #
 Name     : isa-l
 Version  : 2.30.0
-Release  : 38
+Release  : 39
 URL      : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Source0  : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Summary  : Library for storage systems
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656044482
+export SOURCE_DATE_EPOCH=1656126966
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -138,7 +138,7 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1656044482
+export SOURCE_DATE_EPOCH=1656126966
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/isa-l
 cp %{_builddir}/isa-l-2.30.0/LICENSE %{buildroot}/usr/share/package-licenses/isa-l/c41999097043083c4213a15101a122f1401e41df
