@@ -4,9 +4,9 @@
 #
 Name     : isa-l
 Version  : 2.30.0
-Release  : 43
-URL      : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
-Source0  : https://github.com/01org/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
+Release  : 44
+URL      : https://github.com/intel/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
+Source0  : https://github.com/intel/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Summary  : Library for storage systems
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656126966
+export SOURCE_DATE_EPOCH=1665090308
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -138,10 +138,10 @@ cd ../buildavx512;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1656126966
+export SOURCE_DATE_EPOCH=1665090308
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/isa-l
-cp %{_builddir}/isa-l-2.30.0/LICENSE %{buildroot}/usr/share/package-licenses/isa-l/c41999097043083c4213a15101a122f1401e41df
+cp %{_builddir}/isa-l-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/isa-l/c41999097043083c4213a15101a122f1401e41df
 pushd ../buildavx2/
 %make_install_v3
 popd
@@ -172,6 +172,8 @@ popd
 /usr/include/isa-l/raid.h
 /usr/include/isa-l/test.h
 /usr/include/isa-l/types.h
+/usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so
+/usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so
 /usr/lib64/libisal.so
 /usr/lib64/pkgconfig/libisal.pc
 
@@ -181,10 +183,8 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so
 /usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so.2
 /usr/lib64/glibc-hwcaps/x86-64-v3/libisal.so.2.0.30
-/usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so
 /usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so.2
 /usr/lib64/glibc-hwcaps/x86-64-v4/libisal.so.2.0.30
 /usr/lib64/libisal.so.2
