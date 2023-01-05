@@ -4,7 +4,7 @@
 #
 Name     : isa-l
 Version  : 2.30.0
-Release  : 45
+Release  : 46
 URL      : https://github.com/intel/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Source0  : https://github.com/intel/isa-l/archive/v2.30.0/isa-l-2.30.0.tar.gz
 Summary  : Library for storage systems
